@@ -236,18 +236,21 @@ class Accueil3 extends StatelessWidget {
         title: Text("More"),
       ),
       backgroundColor: primaryColor2,
-      body: new Container(
-        color: Colors.grey[200],
-        child: Column(
-          children: <Widget>[
-            Image(
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          Container(
+            child: const Center(
+                child: Text(
+              'Made by Antoine Illien with Flutter',
+            )),
+          ),
+          Container(
+            child: Image(
                 image: NetworkImage(
                     'https://raw.githubusercontent.com/antoineillien/ressources/main/profile_rounded.png')),
-            Text("   Made by Antoine Illien    ",
-                style: const TextStyle(fontWeight: FontWeight.bold)),
-          ],
-        ),
-        alignment: Alignment.center,
+          ),
+        ],
       ),
     );
   }
@@ -293,18 +296,19 @@ class DetailScreen extends StatelessWidget {
         backgroundColor: primaryColor2,
         title: Text(ami.title),
       ),
-      body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(children: <Widget>[
-            Image(image: NetworkImage(ami.profile)),
-            SizedBox(height: 20),
-            Text(
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          Container(
+            child: Text(
               ami.description,
-              style: TextStyle(
-                color: Color.fromARGB(255, 13, 33, 145),
-              ),
-            )
-          ])),
+            ),
+          ),
+          Container(
+            child: Image(image: NetworkImage(ami.profile)),
+          ),
+        ],
+      ),
     );
   }
 }
