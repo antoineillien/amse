@@ -178,7 +178,7 @@ class Accueil2 extends StatelessWidget {
           return ListTile(
             leading: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    'https://lh3.googleusercontent.com/8Zswj9nXSNCG2lgdcw20a3iNzzfoBb5b7gngk5nE06UYaU8h64_JihipMwF1hw7lKOOeJHPqBSCAc8wCUHq9MgcYgaGpRAlVAQIrCaU=s0')),
+                    'https://raw.githubusercontent.com/antoineillien/ressources/main/metalink.jpeg')),
             title: Text(amis[index].title),
             // When a user taps the ListTile, navigate to the DetailScreen.
             // Notice that you're not only creating a DetailScreen, you're
