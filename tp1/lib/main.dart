@@ -96,8 +96,9 @@ class Accueil1 extends StatelessWidget {
 class Ami {
   final String title;
   final String description;
+  final String profile;
 
-  const Ami(this.title, this.description);
+  const Ami(this.title, this.description, this.profile);
 }
 
 List<String> mainDataList = [
@@ -124,8 +125,8 @@ List<String> mainDataList = [
 ];
 
 List<String> mainDetails = [
-  "Blade Runner 2049 details",
-  "Akira details",
+  "Friend 1 is a helico pilot in the metaverse",
+  "Friend 2 is a black ops soldier on the blockchain",
   "Goodfellas details",
   "The Green Knight details",
   "Macbeth details",
@@ -156,6 +157,29 @@ List<String> mainDetails = [
   "Macbeth details"
 ];
 
+List<String> mainImages = [
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki2.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki3.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc3.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc4.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
+];
+
 class Accueil2 extends StatelessWidget {
   @override
   final amis = List.generate(
@@ -163,6 +187,7 @@ class Accueil2 extends StatelessWidget {
     (i) => Ami(
       mainDataList[i],
       mainDetails[i],
+      mainImages[i],
     ),
   );
 
@@ -177,8 +202,7 @@ class Accueil2 extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://raw.githubusercontent.com/antoineillien/ressources/main/metalink.jpeg')),
+                backgroundImage: NetworkImage(amis[index].profile)),
             title: Text(amis[index].title),
             // When a user taps the ListTile, navigate to the DetailScreen.
             // Notice that you're not only creating a DetailScreen, you're
