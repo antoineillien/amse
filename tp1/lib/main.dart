@@ -236,15 +236,18 @@ class Accueil3 extends StatelessWidget {
         title: Text("More"),
       ),
       backgroundColor: primaryColor2,
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-                'https://raw.githubusercontent.com/antoineillien/startup_namer2/master/lib/ether_metaverse.png'),
-            fit: BoxFit.contain,
-          ),
+      body: new Container(
+        color: Colors.grey[200],
+        child: Column(
+          children: <Widget>[
+            Image(
+                image: NetworkImage(
+                    'https://raw.githubusercontent.com/antoineillien/ressources/main/profile_rounded.png')),
+            Text("   Made by Antoine Illien    ",
+                style: const TextStyle(fontWeight: FontWeight.bold)),
+          ],
         ),
-        child: null,
+        alignment: Alignment.center,
       ),
     );
   }
