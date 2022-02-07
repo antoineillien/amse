@@ -18,9 +18,22 @@ class Accueil3 extends StatelessWidget {
         children: <Widget>[
           Container(
             child: const Center(
-                child: Text(
-              'Made by Antoine Illien with Flutter',
-            )),
+                child: Text('Made by Antoine Illien with Flutter',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ))),
+          ),
+          Container(
+            child: SizedBox(height: 30),
+          ),
+          Container(
+            child: const Center(
+                child: Text('antoine.illien@etu.imt-nord-europe.fr ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ))),
           ),
           Container(
             child: Image(
