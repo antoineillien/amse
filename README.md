@@ -10,7 +10,7 @@ More infos can be found on the README.md of the TP1.
 
 ```
 git clone https://github.com/antoineillien/amse.git
-cd amse\tp1
+cd amse/tp1
 flutter create .
 flutter run 
 ```
