@@ -21,6 +21,10 @@ Find all your friends :
 
 ![alt text](https://raw.githubusercontent.com/antoineillien/ressources/main/friends.png)
 
+View useful infos on them  : 
+
+![alt text](https://raw.githubusercontent.com/antoineillien/ressources/main/friends_infos.png)
+
 Directly access the metaverse : 
 
 ![alt text](https://raw.githubusercontent.com/antoineillien/ressources/main/metaverse_jump.png)
