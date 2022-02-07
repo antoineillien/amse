@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'about.dart';
 import 'friendslist.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const primaryColor1 = Color.fromARGB(255, 147, 170, 165);
 const primaryColor2 = Color.fromARGB(255, 202, 198, 189);
@@ -16,6 +17,7 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
+  static const url = 'https://play.decentraland.org/';
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
@@ -61,7 +63,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            //  html.window.open('https://play.decentraland.org/', "_blank");
+            launch(url);
+            //  html.window.open('https://play.decentraland.org/', "_blank"); not working, raise a null safety issue, even with the good dependencies
           },
           label: const Text('Jump in the Metaverse !'),
           icon: const Icon(Icons.add_circle_outline_outlined),
