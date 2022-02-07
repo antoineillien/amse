@@ -58,4 +58,7 @@ Aside from improving the UI, I would have add a filter and search widget on the 
 The images needed for this app are stored on my github, which allows me to make sure that they will stay available, while making it easier for me to manage them (when compared to local files).
 
 
+## Disclaimer 
+
+Metaverse is a fraud.
 
