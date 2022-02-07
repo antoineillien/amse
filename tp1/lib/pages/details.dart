@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'friendslist.dart';
 import 'package:new_app/items/friends.dart';
 
+const primaryColor4 = Color.fromARGB(255, 143, 186, 158);
+
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key, required this.ami}) : super(key: key);
 
@@ -10,8 +12,8 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primaryColor4,
       appBar: AppBar(
-        backgroundColor: primaryColor2,
         title: Text(ami.title),
       ),
       body: ListView(
@@ -23,6 +25,24 @@ class DetailScreen extends StatelessWidget {
             ),
           ),
           Container(
+            child: SizedBox(height: 30),
+          ),
+          Container(
+            child: const Text(
+              'We met on :',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            child: Text(
+              ami.place,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            child: SizedBox(height: 30),
+          ),
+          Container(
             child: Image(image: NetworkImage(ami.profile)),
           ),
         ],
@@ -30,3 +50,5 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
+
+//SizedBox(height: 10),

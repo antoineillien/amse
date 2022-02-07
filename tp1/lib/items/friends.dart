@@ -4,8 +4,9 @@ class Ami {
   final String title;
   final String description;
   final String profile;
+  final String place;
 
-  const Ami(this.title, this.description, this.profile);
+  const Ami(this.title, this.description, this.profile, this.place);
 }
 
 List<String> mainDataList = [
@@ -57,24 +58,47 @@ List<String> mainDetails = [
 List<String> mainImages = [
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc1.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc2.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc3.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki1.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc4.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc5.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki2.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc6.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc7.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc8.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki3.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki4.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc9.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc10.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc11.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki5.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc12.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc13.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc14.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc15.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki6.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki7.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc16.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc17.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki8.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc18.png",
-  "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc19.png",
+  "https://raw.githubusercontent.com/antoineillien/ressources/main/azuki9.png",
   "https://raw.githubusercontent.com/antoineillien/ressources/main/bayc20.png",
+];
+
+List<String> MeetData = [
+  "Decentraland",
+  "The Sandbox",
+  "The Ethereum Blockchain",
+  "Decentraland",
+  "The Sandbox",
+  "Decentraland",
+  "The Sandbox",
+  "The Ethereum Blockchain",
+  "Decentraland",
+  "The Sandbox",
+  "Decentraland",
+  "The Sandbox",
+  "The Ethereum Blockchain",
+  "Decentraland",
+  "The Sandbox",
+  "Decentraland",
+  "The Sandbox",
+  "The Ethereum Blockchain",
+  "Decentraland",
+  "The Sandbox",
 ];
 
 class AmisScreen extends StatelessWidget {

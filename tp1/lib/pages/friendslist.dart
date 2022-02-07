@@ -10,11 +10,7 @@ class Accueil2 extends StatelessWidget {
   @override
   final amis = List.generate(
     20,
-    (i) => Ami(
-      mainDataList[i],
-      mainDetails[i],
-      mainImages[i],
-    ),
+    (i) => Ami(mainDataList[i], mainDetails[i], mainImages[i], MeetData[i]),
   );
 
   Widget build(BuildContext context) {
