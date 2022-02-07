@@ -26,5 +26,8 @@ Directly access the metaverse (https://play.decentraland.org/) :
 
 
 
+## Improvement
+
+Aside from improving the UI, I would have add a filter and search widget on the friends list.
 
 
