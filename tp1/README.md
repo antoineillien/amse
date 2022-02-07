@@ -55,7 +55,7 @@ Aside from improving the UI, I would have add a filter and search widget on the 
 - **items/friends.dart :**  
 *Contains the class of the friends object, called "ami", all of the infos of each friend, and the builder of the listview*
 
-The images needed for this app are stored on my github, which allow me to make sure that they will stay available, while making it easier for me to manage them (when compared to local files).
+The images needed for this app are stored on my github, which allows me to make sure that they will stay available, while making it easier for me to manage them (when compared to local files).
 
 
 
