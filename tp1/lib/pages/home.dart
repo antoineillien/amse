@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const primaryColor1 = Color.fromARGB(255, 147, 170, 165);
 const primaryColor2 = Color.fromARGB(255, 202, 198, 189);
-const primaryColor3 = Color.fromARGB(255, 38, 83, 105);
+const primaryColor3 = Color.fromARGB(255, 38, 83, 106);
 
 class Accueil1 extends StatelessWidget {
   @override
