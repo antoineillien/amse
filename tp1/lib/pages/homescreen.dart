@@ -18,9 +18,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const url = 'https://play.decentraland.org/';
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     Accueil1(),
     Accueil2(),
     Accueil3(),

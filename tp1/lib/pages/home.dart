@@ -9,12 +9,12 @@ class Accueil1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
         backgroundColor: primaryColor2,
       ),
       backgroundColor: primaryColor3,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
                 'https://raw.githubusercontent.com/antoineillien/ressources/main/metalink.jpeg'),

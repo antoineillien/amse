@@ -7,7 +7,6 @@ const primaryColor2 = Color.fromARGB(255, 202, 198, 189);
 const primaryColor3 = Color.fromARGB(255, 38, 83, 105);
 
 class Accueil2 extends StatelessWidget {
-  @override
   final amis = List.generate(
     20,
     (i) => Ami(mainDataList[i], mainDetails[i], mainImages[i], MeetData[i]),

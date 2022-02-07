@@ -36,7 +36,7 @@ class Accueil3 extends StatelessWidget {
                     ))),
           ),
           Container(
-            child: Image(
+            child: const Image(
                 image: NetworkImage(
                     'https://raw.githubusercontent.com/antoineillien/ressources/main/profile_rounded.png')),
           ),
