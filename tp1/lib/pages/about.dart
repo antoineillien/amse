@@ -40,6 +40,18 @@ class Accueil3 extends StatelessWidget {
                 image: NetworkImage(
                     'https://raw.githubusercontent.com/antoineillien/ressources/main/profile_rounded.png')),
           ),
+          Container(
+            child: SizedBox(height: 30),
+          ),
+          Container(
+            child: const Center(
+                child: Text(
+                    'Images from https://boredapeyachtclub.com/#/ and https://www.azuki.com/ ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ))),
+          ),
         ],
       ),
     );
