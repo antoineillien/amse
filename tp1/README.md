@@ -11,7 +11,7 @@ Using Network Images stored on my github allows me to modify these images withou
 
 The "Jump in the metaverse" button has been neutralized for the moment, as the dependencies needed didn't support null safety. It was possible to run the app but only with the following command : "flutter run --no-sound-null-safety"
 
-The button was suppose to open the following website : https://play.decentraland.org/ .
+The button was suppose to directly open Decentraland via this link : https://play.decentraland.org/ , the code is still available in homescreen.dart .
 
 
 
