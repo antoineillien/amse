@@ -36,6 +36,24 @@ Directly access the metaverse (https://play.decentraland.org/) :
 
 ## Improvement
 
-Aside from improving the UI, I would have add a filter and search widget on the friends list.
+Aside from improving the UI, I would have add a filter and search widget on the friends list, and a way to add friends.
+
+## Code structure
+
+- **main.dart :**  
+*launch the app*
+- **pages/details.dart :**  
+*Displays details about each friend from the database*
+- **pages/friendslist.dart :**  
+*Displays a scrollable and clickable list of all registered friends*
+- **pages/about.dart :**  
+*Displays infos about me*
+- **pages/home.dart :**  
+*Displays the homescreen page of the app*
+- **pages/homescreen.dart :**  
+*Allows the navigation between the homepage, the friends list, and the "about" page*
+- **items/friends.dart :**  
+*Contains the class of the friends object, called "ami", all of the infos of each friend, and the builder of the listview*
+
 
 
