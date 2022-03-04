@@ -22,17 +22,32 @@ class _Exercice4State extends State<Ex4> {
       ),
       body: Center(
           child: Column(children: [
-        SizedBox(
-            width: 150.0,
-            height: 150.0,
-            child: Container(
-                margin: EdgeInsets.all(15),
-                child: this.createTileWidgetFrom(tile))),
+        Container(
+          child: Text("Image de départ : "),
+        ),
+        Container(
+          child: const SizedBox(height: 30),
+        ),
         Container(
             height: 200,
             child: Image.network(
                 'https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_smoking.jpeg',
-                fit: BoxFit.cover))
+                fit: BoxFit.cover)),
+        Container(
+          child: const SizedBox(height: 30),
+        ),
+        Container(
+          child: Text("Tuile issue de l'image : "),
+        ),
+        Container(
+          child: const SizedBox(height: 30),
+        ),
+        SizedBox(
+            width: 200.0,
+            height: 200.0,
+            child: Container(
+                margin: EdgeInsets.all(15),
+                child: this.createTileWidgetFrom(tile))),
       ])),
     );
   }
@@ -60,8 +75,8 @@ class Tile {
         child: Container(
           child: Align(
             alignment: this.alignment,
-            widthFactor: 0.3,
-            heightFactor: 0.3,
+            widthFactor: 0.2,
+            heightFactor: 0.2,
             child: Image.network(this.imageURL),
           ),
         ),
