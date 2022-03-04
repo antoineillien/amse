@@ -17,8 +17,7 @@ class _Exercice5cState extends State<Ex5_3> {
     updateTiles();
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-              "Génération d'un plateau réglable de tuile à partir d'une image"),
+          title: const Text("Génération des tuiles ajustables"),
           centerTitle: true,
         ),
         body: Container(
@@ -39,7 +38,7 @@ class _Exercice5cState extends State<Ex5_3> {
               ),
               Row(
                 children: [
-                  const Text("Divisions : "),
+                  const Text("Découpage : "),
                   Expanded(
                     child: Slider(
                       value: tilesDivisions,
