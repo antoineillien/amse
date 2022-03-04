@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Exercice4 extends StatefulWidget {
-  const Exercice4({Key? key}) : super(key: key);
+class Ex4 extends StatefulWidget {
+  const Ex4({Key? key}) : super(key: key);
 
   @override
   _Exercice4State createState() => _Exercice4State();
 }
 
-class _Exercice4State extends State<Exercice4> {
+class _Exercice4State extends State<Ex4> {
   Tile tile = new Tile(
       imageURL:
           'https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_smoking.jpeg',
@@ -41,7 +41,7 @@ class _Exercice4State extends State<Exercice4> {
     return InkWell(
       child: tile.croppedImageTile(),
       onTap: () {
-        print("tapped on tile");
+        print("Tuile");
       },
     );
   }

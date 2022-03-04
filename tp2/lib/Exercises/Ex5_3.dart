@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Exercice5c extends StatefulWidget {
-  const Exercice5c({Key? key}) : super(key: key);
+class Ex5_3 extends StatefulWidget {
+  const Ex5_3({Key? key}) : super(key: key);
 
   @override
   _Exercice5cState createState() => _Exercice5cState();
 }
 
-class _Exercice5cState extends State<Exercice5c> {
+class _Exercice5cState extends State<Ex5_3> {
   double tilesDivisions = 5.0;
   List<Tile> tiles = [];
 

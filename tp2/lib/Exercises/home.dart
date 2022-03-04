@@ -17,16 +17,15 @@ class ListHome extends StatelessWidget {
           children: const [
             MenuTile(title: " Ex1 : Afficher une image ", page: Ex1()),
             MenuTile(title: " Ex2 : Transformer une image ", page: Ex2()),
-            MenuTile(title: " Ex4 : Affichage d'une tuile", page: Exercice4()),
+            MenuTile(title: " Ex4 : Affichage d'une tuile", page: Ex4()),
             MenuTile(
-                title: " Ex5 : Génération du plateau de tuile ",
-                page: Exercice5a()),
+                title: " Ex5 : Génération du plateau de tuile ", page: Ex5_1()),
             MenuTile(
                 title: " Ex5.2 : Plateau de tuiles issues d'une même image",
-                page: Exercice5b()),
+                page: Ex5_2()),
             MenuTile(
                 title: " Ex5.3 : Configuration de la taille des tuiles",
-                page: Exercice5c()),
+                page: Ex5_3()),
           ],
         ),
       ),

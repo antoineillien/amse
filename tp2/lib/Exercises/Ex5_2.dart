@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Exercice5b extends StatefulWidget {
-  const Exercice5b({
+class Ex5_2 extends StatefulWidget {
+  const Ex5_2({
     Key? key,
   }) : super(key: key);
   @override
-  State<Exercice5b> createState() => _Exercice5bState();
+  State<Ex5_2> createState() => _Exercice5bState();
 }
 
-class _Exercice5bState extends State<Exercice5b> {
+class _Exercice5bState extends State<Ex5_2> {
   List<Tile> tiles = [
     Tile(
       alignment: Alignment.topLeft,
