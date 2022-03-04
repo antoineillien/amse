@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TP2',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'TP2'),
+      home: MyHomePage(title: 'Taquin'),
     );
   }
 }
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Card(
               child: ListTile(
-                title: Text('Exercice 7'),
+                title: Text('Jouer une partie'),
                 subtitle: Text('Jeu du Taquin'),
                 trailing: Icon(Icons.play_arrow_rounded),
                 onTap: () => Navigator.push(

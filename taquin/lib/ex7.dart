@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 //GLOBAL
-String imageURL = 'https://picsum.photos/512';
+String imageURL =
+    'https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_smoking.jpeg';
 math.Random random = new math.Random();
 int gridSize = 3;
 
@@ -24,9 +25,7 @@ class TileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return this.isEmpty
-      ? Container(color: Colors.white)
-      : croppedImageTile();
+    return this.isEmpty ? Container(color: Colors.white) : croppedImageTile();
   }
 
   Widget croppedImageTile() {
@@ -36,19 +35,17 @@ class TileWidget extends StatelessWidget {
         child: Container(
           child: Align(
             alignment: this.alignment,
-            widthFactor: 1/gridSize,
-            heightFactor: 1/gridSize,
+            widthFactor: 1 / gridSize,
+            heightFactor: 1 / gridSize,
             child: Image.network(imageURL),
           ),
         ),
       ),
     );
   }
-
 }
 
-
-class Exercice7 extends StatelessWidget{
+class Exercice7 extends StatelessWidget {
   final String title;
   Exercice7({Key key, this.title}) : super(key: key);
 
@@ -66,13 +63,12 @@ class Exercice7 extends StatelessWidget{
   }
 }
 
-class BodyTilesApp extends StatefulWidget{
-
+class BodyTilesApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => BodyTilesAppState();
 }
 
-class BodyTilesAppState extends State<BodyTilesApp>{
+class BodyTilesAppState extends State<BodyTilesApp> {
   int indexRemovedTile, moves, difficultyLevel;
   bool gameOn, hasWon;
   List<TileWidget> tilesGrid;
@@ -95,79 +91,83 @@ class BodyTilesAppState extends State<BodyTilesApp>{
         children: [
           Expanded(
             child: GridView.count(
-              crossAxisCount: gridSize,
-              crossAxisSpacing: 2,
-              mainAxisSpacing: 2,
-              physics: NeverScrollableScrollPhysics(),
-              children: [for(Widget t in tilesGrid) createWidgetForGrid(t, tilesGrid.indexOf(t)),]
-            ),
+                crossAxisCount: gridSize,
+                crossAxisSpacing: 2,
+                mainAxisSpacing: 2,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  for (Widget t in tilesGrid)
+                    createWidgetForGrid(t, tilesGrid.indexOf(t)),
+                ]),
           ),
-
           Container(
             alignment: Alignment.center,
             child: !this.hasWon
-              ? null
-              : Center(child: Container(
-                child: Container(
-                  color: Colors.transparent,
-                  alignment: Alignment.center,
-                  child:
-                    Text("You Won!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent, fontSize: 50)
+                ? null
+                : Center(
+                    child: Container(
+                    child: Container(
+                      color: Colors.transparent,
+                      alignment: Alignment.center,
+                      child: Text("You Won!",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepPurpleAccent,
+                              fontSize: 50)),
                     ),
-                ),
-            )),
+                  )),
           ),
-
           SizedBox(height: 10),
-
           Container(
             child: !this.gameOn
-            ? Row(children: [
-                Text("Difficulty -",
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey, fontSize: 20)
-                ),
-                Expanded(child: Slider(
-                  min: 1,
-                  max: 5,
-                  value: this.difficultyLevel.toDouble(),
-                  divisions: 4,
-                  label: this.difficultyLevel.toString(),
-                  onChanged: (double value) {setState(() {
-                    this.difficultyLevel = value.toInt();
-                  });},
-                )),
-               ],
-              )
-            : null,
+                ? Row(
+                    children: [
+                      Text("Difficulty -",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueGrey,
+                              fontSize: 20)),
+                      Expanded(
+                          child: Slider(
+                        min: 1,
+                        max: 5,
+                        value: this.difficultyLevel.toDouble(),
+                        divisions: 4,
+                        label: this.difficultyLevel.toString(),
+                        onChanged: (double value) {
+                          setState(() {
+                            this.difficultyLevel = value.toInt();
+                          });
+                        },
+                      )),
+                    ],
+                  )
+                : null,
           ),
-
           SizedBox(height: 10),
-
           Container(
             alignment: Alignment.centerLeft,
             child: Text("Moves - " + this.moves.toString(),
-                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey, fontSize: 20)
-            ),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueGrey,
+                    fontSize: 20)),
           ),
-
           SizedBox(height: 20),
-
         ],
       ),
-
       floatingActionButton: FloatingActionButton(
         child: Icon(gameOn ? Icons.stop_rounded : Icons.play_arrow_rounded),
         onPressed: () {
           setState(() {
-            if(!this.gameOn) {
-              this.indexRemovedTile = random.nextInt(gridSize*gridSize);
+            if (!this.gameOn) {
+              this.indexRemovedTile = random.nextInt(gridSize * gridSize);
               tilesGrid = fillList();
               this.startBoard();
               this.hasWon = false;
               this.moves = 0;
-            }else{
+            } else {
               this.indexRemovedTile = null;
               tilesGrid = fillList();
             }
@@ -176,13 +176,16 @@ class BodyTilesAppState extends State<BodyTilesApp>{
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
       bottomNavigationBar: BottomAppBar(
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget> [
-            Expanded(child: IconButton(
-                icon: Icon(Icons.remove, color: (!this.gameOn && gridSize > 2) ? Colors.blueGrey: Colors.redAccent),
+          children: <Widget>[
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.remove,
+                    color: (!this.gameOn && gridSize > 2)
+                        ? Colors.blueGrey
+                        : Colors.redAccent),
                 onPressed: () {
                   if (!this.gameOn && gridSize > 2) {
                     setState(() {
@@ -195,9 +198,12 @@ class BodyTilesAppState extends State<BodyTilesApp>{
                 },
               ),
             ),
-
-            Expanded(child: IconButton(
-                icon: Icon(Icons.add, color: (!this.gameOn && gridSize < 10) ? Colors.blueGrey : Colors.redAccent),
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.add,
+                    color: (!this.gameOn && gridSize < 10)
+                        ? Colors.blueGrey
+                        : Colors.redAccent),
                 onPressed: () {
                   if (!this.gameOn && gridSize < 10) {
                     setState(() {
@@ -210,7 +216,6 @@ class BodyTilesAppState extends State<BodyTilesApp>{
                 },
               ),
             ),
-
           ],
         ),
       ),
@@ -218,22 +223,22 @@ class BodyTilesAppState extends State<BodyTilesApp>{
   }
 
   createWidgetForGrid(TileWidget t, int index) {
-    if((index-1 == indexRemovedTile && index%gridSize == 0) || (index+1 == indexRemovedTile && indexRemovedTile%gridSize == 0)){
+    if ((index - 1 == indexRemovedTile && index % gridSize == 0) ||
+        (index + 1 == indexRemovedTile && indexRemovedTile % gridSize == 0)) {
       return t;
     } else {
-      if (index+1 == indexRemovedTile ||
-          index-1 == indexRemovedTile ||
-          index+gridSize == indexRemovedTile ||
-          index-gridSize == indexRemovedTile){
+      if (index + 1 == indexRemovedTile ||
+          index - 1 == indexRemovedTile ||
+          index + gridSize == indexRemovedTile ||
+          index - gridSize == indexRemovedTile) {
         return InkWell(
           child: Container(
             child: t,
             decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.deepPurple,
-                  width: 3,
-                )
-            ),
+              color: Colors.deepPurple,
+              width: 3,
+            )),
           ),
           onTap: () => swapTiles(index),
         );
@@ -243,56 +248,59 @@ class BodyTilesAppState extends State<BodyTilesApp>{
     }
   }
 
-  startBoard(){
-    for(int i=0; i<this.difficultyLevel*50; i++){
+  startBoard() {
+    for (int i = 0; i < this.difficultyLevel * 50; i++) {
       getAvailableMoves();
-      swapTiles(this.availableMoves[random.nextInt(this.availableMoves.length)]);
+      swapTiles(
+          this.availableMoves[random.nextInt(this.availableMoves.length)]);
     }
   }
 
-  getAvailableMoves(){
+  getAvailableMoves() {
     this.availableMoves = [];
-    for(int i=0; i<tilesGrid.length; i++){
-      if(!(i-1 == indexRemovedTile && i%gridSize == 0) &&
-        !(i+1 == indexRemovedTile && indexRemovedTile%gridSize == 0)){
-        if (i+1 == indexRemovedTile ||
-            i-1 == indexRemovedTile ||
-            i+gridSize == indexRemovedTile ||
-            i-gridSize == indexRemovedTile){
+    for (int i = 0; i < tilesGrid.length; i++) {
+      if (!(i - 1 == indexRemovedTile && i % gridSize == 0) &&
+          !(i + 1 == indexRemovedTile && indexRemovedTile % gridSize == 0)) {
+        if (i + 1 == indexRemovedTile ||
+            i - 1 == indexRemovedTile ||
+            i + gridSize == indexRemovedTile ||
+            i - gridSize == indexRemovedTile) {
           this.availableMoves.add(i);
         }
       }
     }
   }
 
-  swapTiles(int index){
+  swapTiles(int index) {
     setState(() {
-      if(indexRemovedTile+1 == index){
-        tilesGrid.insert(indexRemovedTile, tilesGrid.removeAt(indexRemovedTile+1));
+      if (indexRemovedTile + 1 == index) {
+        tilesGrid.insert(
+            indexRemovedTile, tilesGrid.removeAt(indexRemovedTile + 1));
         indexRemovedTile++;
         moves++;
-      } else if(indexRemovedTile-1 == index){
-        tilesGrid.insert(indexRemovedTile, tilesGrid.removeAt(indexRemovedTile-1));
+      } else if (indexRemovedTile - 1 == index) {
+        tilesGrid.insert(
+            indexRemovedTile, tilesGrid.removeAt(indexRemovedTile - 1));
         indexRemovedTile--;
         moves++;
-      } else if(indexRemovedTile+gridSize == index){
+      } else if (indexRemovedTile + gridSize == index) {
         Widget cp = tilesGrid.removeAt(index);
         tilesGrid.insert(index, tilesGrid.elementAt(indexRemovedTile));
         tilesGrid.removeAt(indexRemovedTile);
         tilesGrid.insert(indexRemovedTile, cp);
-        indexRemovedTile+=gridSize;
+        indexRemovedTile += gridSize;
         moves++;
-      } else if(indexRemovedTile-gridSize == index){
+      } else if (indexRemovedTile - gridSize == index) {
         Widget cp = tilesGrid.removeAt(index);
-        tilesGrid.insert(index, tilesGrid.elementAt(indexRemovedTile-1));
+        tilesGrid.insert(index, tilesGrid.elementAt(indexRemovedTile - 1));
         tilesGrid.removeAt(indexRemovedTile);
         tilesGrid.insert(indexRemovedTile, cp);
-        indexRemovedTile-=gridSize;
+        indexRemovedTile -= gridSize;
         moves++;
       }
 
-      if(gameOn){
-        if(checkWin()){
+      if (gameOn) {
+        if (checkWin()) {
           this.hasWon = true;
           this.gameOn = false;
           this.indexRemovedTile = null;
@@ -300,40 +308,41 @@ class BodyTilesAppState extends State<BodyTilesApp>{
         }
       }
     });
-
   }
 
   fillList() {
     List<TileWidget> listTemp = List<TileWidget>();
 
-    for(double i=0; i<gridSize; i++){
-      for(double j=0; j<gridSize; j++){
-        j+i*gridSize == this.indexRemovedTile
+    for (double i = 0; i < gridSize; i++) {
+      for (double j = 0; j < gridSize; j++) {
+        j + i * gridSize == this.indexRemovedTile
             ? listTemp.add(TileWidget(
-          Tile((j+i*gridSize).toInt()),
-          Alignment(j/(gridSize-1)*2 - 1, i/(gridSize-1)*2- 1),
-          true,
-        ))
+                Tile((j + i * gridSize).toInt()),
+                Alignment(
+                    j / (gridSize - 1) * 2 - 1, i / (gridSize - 1) * 2 - 1),
+                true,
+              ))
             : listTemp.add(TileWidget(
-          Tile((j+i*gridSize).toInt()),
-          Alignment(j/(gridSize-1)*2 - 1, i/(gridSize-1)*2 - 1),
-          false,
-        ));
+                Tile((j + i * gridSize).toInt()),
+                Alignment(
+                    j / (gridSize - 1) * 2 - 1, i / (gridSize - 1) * 2 - 1),
+                false,
+              ));
       }
     }
     return listTemp;
   }
 
-  bool checkWin(){
+  bool checkWin() {
     return listEquals(getIndexGrid(), getIndexInit()) ? true : false;
   }
 
-  List<int> getIndexGrid(){
-    return List<int>.generate(gridSize*gridSize, (index) => tilesGrid.elementAt(index).tile.number);
+  List<int> getIndexGrid() {
+    return List<int>.generate(
+        gridSize * gridSize, (index) => tilesGrid.elementAt(index).tile.number);
   }
 
-  List<int> getIndexInit(){
-    return List<int>.generate(gridSize*gridSize, (index) => index);
+  List<int> getIndexInit() {
+    return List<int>.generate(gridSize * gridSize, (index) => index);
   }
-
 }
