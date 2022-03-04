@@ -15,10 +15,8 @@ flutter run
 - **main.dart :**  
 *launch the app*
 - **home/details.dart :**  
-*Displays a scrollable list of exercises*
+*Displays a scrollable list of exercises + supports the code of ex1*
 
-- **pages/ex1 :**  
-*Displays an image*
 
 - **pages/ex2 :**  
 *Transform an image*
