@@ -22,8 +22,8 @@ class _Exercice5cState extends State<Ex5_3> {
         ),
         body: Container(
           padding: const EdgeInsets.all(15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
+            padding: const EdgeInsets.all(8),
             children: [
               SizedBox(
                 width: cWidth,
