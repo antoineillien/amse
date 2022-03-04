@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 
 import "dart:math" show pi;
 
-class Exercice2 extends StatefulWidget {
-  const Exercice2({Key? key}) : super(key: key);
+class Ex2 extends StatefulWidget {
+  const Ex2({Key? key}) : super(key: key);
 
   @override
   _Exercice2State createState() => _Exercice2State();
 }
 
-class _Exercice2State extends State<Exercice2> {
-  double rotX = 0;
-  double rotZ = 0;
-  bool mirror = false;
+class _Exercice2State extends State<Ex2> {
+  // ignore: non_constant_identifier_names
+  double rot_axis_X = 0;
+  // ignore: non_constant_identifier_names
+  double rot_axis_Z = 0;
+  bool symetrie = false;
   double scale = 1;
 
   @override
@@ -21,15 +23,14 @@ class _Exercice2State extends State<Exercice2> {
       appBar: AppBar(title: const Text("Rotate / resize image")),
       body: SingleChildScrollView(
         child: Column(children: [
-          //Image
           Container(
             child: Transform(
               alignment: Alignment.center,
               transform: Matrix4.identity()
                 ..scale(scale)
-                ..rotateY(mirror ? pi : 0)
-                ..rotateX(rotX)
-                ..rotateZ(rotZ),
+                ..rotateY(symetrie ? pi : 0)
+                ..rotateX(rot_axis_X)
+                ..rotateZ(rot_axis_Z),
               child: const Image(
                 image: NetworkImage(
                     "https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_onset.jpeg"),
@@ -39,20 +40,18 @@ class _Exercice2State extends State<Exercice2> {
             clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(color: Colors.white),
           ),
-
-          // Rotation selon x
           Container(
             child: Row(
               children: [
-                const Text("Rotation X:"),
+                const Text("Rotation selon l'axe X:"),
                 Expanded(
                   child: Slider(
-                    value: rotX,
+                    value: rot_axis_X,
                     min: -pi,
                     max: pi,
                     onChanged: (double value) {
                       setState(() {
-                        rotX = value;
+                        rot_axis_X = value;
                       });
                     },
                   ),
@@ -61,20 +60,18 @@ class _Exercice2State extends State<Exercice2> {
             ),
             padding: const EdgeInsets.all(10),
           ),
-
-          // Rotation selon y
           Container(
             child: Row(
               children: [
-                const Text("Rotation Z:"),
+                const Text("Rotation selon l'axe Z:"),
                 Expanded(
                   child: Slider(
-                    value: rotZ,
+                    value: rot_axis_Z,
                     min: -pi,
                     max: pi,
                     onChanged: (double value) {
                       setState(() {
-                        rotZ = value;
+                        rot_axis_Z = value;
                       });
                     },
                   ),
@@ -83,17 +80,15 @@ class _Exercice2State extends State<Exercice2> {
             ),
             padding: const EdgeInsets.all(10),
           ),
-
-          //Rotation selon z
           Container(
             child: Row(
               children: [
-                const Text("Mirroir:"),
+                const Text("Symétrie :"),
                 Checkbox(
-                  value: mirror,
+                  value: symetrie,
                   onChanged: (bool? value) {
                     setState(() {
-                      mirror = value!;
+                      symetrie = value!;
                     });
                   },
                 )
@@ -101,12 +96,10 @@ class _Exercice2State extends State<Exercice2> {
             ),
             padding: const EdgeInsets.all(10),
           ),
-
-          //Echelle
           Container(
             child: Row(
               children: [
-                const Text("Taille:"),
+                const Text("Taille :"),
                 Expanded(
                   child: Slider(
                     value: scale,

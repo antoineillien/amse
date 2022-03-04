@@ -16,7 +16,7 @@ class ListHome extends StatelessWidget {
         child: ListView(
           children: const [
             MenuTile(title: " Ex1 : Afficher une image ", page: Ex1()),
-            MenuTile(title: " Ex2 : Transformer une image ", page: Exercice2()),
+            MenuTile(title: " Ex2 : Transformer une image ", page: Ex2()),
             MenuTile(title: " Ex4 : Affichage d'une tuile", page: Exercice4()),
             MenuTile(
                 title: " Ex5 : Génération du plateau de tuile ",
