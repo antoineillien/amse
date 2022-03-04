@@ -40,7 +40,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Card(
               child: ListTile(
-                title: Text('Jouer une partie'),
+                title: Text(
+                  '               Jouer une partie',
+                  style: TextStyle(
+                    fontSize: 30,
+                    height:
+                        2, //line height 200%, 1= 100%, were 0.9 = 90% of actual line height
+                    color: Color.fromARGB(255, 8, 163, 72), //font color
+                    backgroundColor: Colors.black12, //background color
+                    letterSpacing: 5, //letter spacing
+                  ),
+                ),
                 trailing: Icon(Icons.play_arrow_rounded),
                 onTap: () => Navigator.push(
                     context,
