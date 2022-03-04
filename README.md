@@ -6,6 +6,11 @@ This repository includes all my projects for the AMSE class
 The TP1 directory includes my app, called MetaLink.
 More infos can be found on the README.md of the TP1.
 
+# TP2
+
+Each Directory in TP2 contains an exercise
+
+
 ## How to use
 
 ```
