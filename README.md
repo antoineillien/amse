@@ -8,10 +8,10 @@ More infos can be found on the README.md of the TP1.
 
 # TP2
 
-Each Directory in TP2 contains an exercise
+The TP2 is a collection of exercises, related to transformations applicable on a image.
 
 
-## How to use
+## How to use TP1
 
 ```
 git clone https://github.com/antoineillien/amse.git
@@ -19,3 +19,4 @@ cd amse/tp1
 flutter create .
 flutter run 
 ```
+## How to use TP2 --> same as TP1
