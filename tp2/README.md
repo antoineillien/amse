@@ -2,21 +2,39 @@
 
 A new Flutter project.
 
-## Getting Started
+## How to use
 
-This Flutter application takes you through the various steps towards creating a tacquins game, which you can examine via the list on the home page.
+```
+git clone https://github.com/antoineillien/amse.git
+cd amse/tp2
+flutter create .
+flutter run 
+```
+## Code structure
 
-==> Exercise 1 : Generation of a random image
-==> Exercise 2 : Rotation/Resize/Scale modification of the random image
-==> Exercise 4 : Generation of a tile from the original image
-==> Exercise 5a: Creation of a grid with colored tiles
-==> Exercise 5b: Creation of grid from an image
-==> Exercise 5b: Creation of a sizable grid from an image
-==> Exercise 6a: Exchange of  2 tiles
-==> Exercise 6b: Exchange of 2 tiles in a grid (in progress)
-==> Exercise 7 : Final game                    (not finished)
+- **main.dart :**  
+*launch the app*
+- **home/details.dart :**  
+*Displays a scrollable list of exercises*
 
+- **pages/ex1 :**  
+*Displays an image*
 
+- **pages/ex2 :**  
+*Transform an image*
 
+- **pages/ex4 :**  
+*Displays a tile from an image*
+
+- **pages/ex5_1 :**  
+*Generate some tiles*
+
+- **pages/ex5_2 :**  
+*Generate multiple tiles from an image*
+
+- **pages/ex5_2 :**  
+*Allow the user to modify the size of tiles*
+
+The images needed for this app are stored on my github, which allows me to make sure that they will stay available, while making it easier for me to manage them (when compared to local files) + my sandboxing parameters on my linux OS make accessing local ressources hazardous sometimes .
 
 
