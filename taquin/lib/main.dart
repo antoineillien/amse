@@ -36,17 +36,27 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: ListView(
+          itemExtent: 500,
           children: [
             Card(
               child: ListTile(
                 title: Text('Jouer une partie'),
-                subtitle: Text('Jeu du Taquin'),
                 trailing: Icon(Icons.play_arrow_rounded),
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => Exercice7(title: "Taquin"))),
               ),
+            ),
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 300,
+                minHeight: 300,
+                maxWidth: 300,
+                maxHeight: 300,
+              ),
+              child: Image.network(
+                  'https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_mood.jpg'),
             ),
           ],
         ));
