@@ -7,8 +7,31 @@ class Ex4 extends StatefulWidget {
   _Exercice4State createState() => _Exercice4State();
 }
 
+class Tuile {
+  String imageURL;
+  Alignment alignment;
+
+  Tuile({required this.imageURL, required this.alignment});
+
+  Widget croppedImageTile() {
+    return FittedBox(
+      fit: BoxFit.fill,
+      child: ClipRect(
+        child: Container(
+          child: Align(
+            alignment: this.alignment,
+            widthFactor: 0.2,
+            heightFactor: 0.2,
+            child: Image.network(this.imageURL),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _Exercice4State extends State<Ex4> {
-  Tile tile = new Tile(
+  Tuile tuile = new Tuile(
       imageURL:
           'https://raw.githubusercontent.com/antoineillien/ressources/main/david_lynch_smoking.jpeg',
       alignment: Alignment(0, 0));
@@ -47,40 +70,17 @@ class _Exercice4State extends State<Ex4> {
             height: 200.0,
             child: Container(
                 margin: EdgeInsets.all(15),
-                child: this.createTileWidgetFrom(tile))),
+                child: this.createTileWidgetFrom(tuile))),
       ])),
     );
   }
 
-  Widget createTileWidgetFrom(Tile tile) {
+  Widget createTileWidgetFrom(Tuile tuile) {
     return InkWell(
-      child: tile.croppedImageTile(),
+      child: tuile.croppedImageTile(),
       onTap: () {
         print("Tuile");
       },
-    );
-  }
-}
-
-class Tile {
-  String imageURL;
-  Alignment alignment;
-
-  Tile({required this.imageURL, required this.alignment});
-
-  Widget croppedImageTile() {
-    return FittedBox(
-      fit: BoxFit.fill,
-      child: ClipRect(
-        child: Container(
-          child: Align(
-            alignment: this.alignment,
-            widthFactor: 0.2,
-            heightFactor: 0.2,
-            child: Image.network(this.imageURL),
-          ),
-        ),
-      ),
     );
   }
 }
